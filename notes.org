@@ -1,0 +1,34 @@
+* FCC Quote Generator
+| feature       | Notes                                |   |
+|---------------+--------------------------------------+---|
+| Quote History | This is something that               |   |
+|               | Will be enabled by using             |   |
+|               | React.                               |   |
+|---------------+--------------------------------------+---|
+| Random Quote  | Base functionality of                |   |
+|               | the site.                            |   |
+|---------------+--------------------------------------+---|
+| tweet         | This should pull the state           |   |
+|               | from the App container.              |   |
+|               | So the app should know the           |   |
+|               | current quote                        |   |
+|               | That's a const that should           |   |
+|               | be stored in the handleClick?        |   |
+|               |                                      |   |
+|               | So the History should also be in the |   |
+|               | HandleClick?                         |   |
+|               |                                      |   |
+
+* React Hierarchy
+** App Container 
+   | functions   | arguments | notes                           |
+   |-------------+-----------+---------------------------------|
+   | handleClick |           | Is this where I can pull in the |
+   |             |           | Quote?                          |
+*** Element that displays the current quote and author
+    Recieves the current quote as a prop from the container
+*** Get Quote Button
+    button classname = getQuote onClick {props.onClick}
+    OnClick
+*** Tweet this quote botton
+  
