@@ -60,7 +60,7 @@ class App extends Component {
         console.log(this.state.quotes);
         if(this.state.loaded){
             return (
-                <div className="App App-header">
+                <div className="App App-header" id="quote-box">
                 {/* <h1>Total Number of Quotes: {this.state.numQuotes}</h1> */}
                 {/*   <h1>Current Quote Index: {this.state.currentQuoteIndex}</h1> */}
                   <div className="Quote">
