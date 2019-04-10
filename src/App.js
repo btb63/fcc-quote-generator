@@ -1,7 +1,8 @@
 import React, {
     Component
 } from 'react';
-import logo from './logo.svg';
+import ReactFCCtest from 'react-fcctest';
+//import logo from './logo.svg';
 import './App.css';
 
 const axios = require('axios');
@@ -50,24 +51,27 @@ class App extends Component {
             });
     }
     onClick() {
-        var thisQuoteIndex = this.state.currentQuoteIndex;
+        //var thisQuoteIndex = this.state.currentQuoteIndex;
         this.setState({
             currentQuoteIndex:getRandomInt(quotes.data.quotes.length),
         });
     }
     render() {
-        console.log("This is in the Render."); 
+        console.log("This is in the Render.");
         console.log(this.state.quotes);
+
         if(this.state.loaded){
             return (
                 <div className="App App-header" id="quote-box">
                 {/* <h1>Total Number of Quotes: {this.state.numQuotes}</h1> */}
                 {/*   <h1>Current Quote Index: {this.state.currentQuoteIndex}</h1> */}
                   <div className="Quote">
-                  <p className="quote-body">{extractQuote(this.state.quotes.data.quotes[this.state.currentQuoteIndex])}</p>
-                  <p className="quote-author">-- {extractAuthor(this.state.quotes.data.quotes[this.state.currentQuoteIndex])}</p>
+                  <p className="quote-body" id="text">{extractQuote(this.state.quotes.data.quotes[this.state.currentQuoteIndex])}</p>
+                  <p className="quote-author" id="author">-- {extractAuthor(this.state.quotes.data.quotes[this.state.currentQuoteIndex])}</p>
                   </div>
-                <QuoteButton className="App-link" onClick={this.onClick}/>
+                  <QuoteButton className="App-link" onClick={this.onClick}/>
+                  <TweetQuote quoteText={extractQuote(this.state.quotes.data.quotes[this.state.currentQuoteIndex])} quoteAuthor={extractAuthor(this.state.quotes.data.quotes[this.state.currentQuoteIndex])} />
+		            <ReactFCCtest />
                 </div>
             );
         }
@@ -78,14 +82,20 @@ class App extends Component {
 }
 
 class QuoteButton extends Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
         return (
-            <button className="quote-button" onClick={this.props.onClick}>Give me another!</button>
+            <button className="quote-button" id="new-quote" onClick={this.props.onClick}>Give me another!</button>
         );
     }
+}
+
+class TweetQuote extends Component {
+  render() {
+    var link = "https://twitter.com/intent/tweet?text=" + this.props.quoteText + ' --' + this.props.quoteAuthor;
+    return (
+          <a id="tweet-quote" target="_blank" rel="noopener noreferrer" href={link}>tweet</a>
+    );
+  }
 }
 
 function getRandomInt(max) {
