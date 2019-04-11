@@ -27,9 +27,34 @@
   color: #61dafb;
 }
 
-#quote-box {
-    /* background-color: red; */
+#tweet-quote {
+  text-decoration: none;
+  background-color: rgba(23, 163, 242, 1);
+  border-radius: 5px;
+  font-size: calc(10px + 1.5vmin);
+  margin: 10px;
+  padding: 20px;
+  color: white;
+}
 
+#tweet-quote:hover {
+  transition: 0.2s;
+  background-color: rgba(100, 163, 242, 1);
+}
+
+#new-quote {
+  background-color: orange;
+  border: 0px;
+  margin: 10px;
+  padding: 20px;
+  font-size: calc(10px + 1.5vmin);
+  border-radius: 5px;
+  color: white;
+}
+
+#new-quote:hover {
+  transition: 0.2s;
+  background-color: rgba(255, 165, 100, 1);
 }
 
 @keyframes App-logo-spin {

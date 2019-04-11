@@ -1,7 +1,7 @@
 import React, {
     Component
 } from 'react';
-import ReactFCCtest from 'react-fcctest';
+// import ReactFCCtest from 'react-fcctest';
 //import logo from './logo.svg';
 import './App.css';
 
@@ -22,6 +22,7 @@ class App extends Component {
     }
     // Pull the quotes json from the example
     componentDidMount() {
+        document.title="Quote Generator";
         axios.get('https://www.btburke.com/quotes/quotes.json')
             .then((response)  => {
                 // handle success
@@ -71,7 +72,7 @@ class App extends Component {
                   </div>
                   <QuoteButton className="App-link" onClick={this.onClick}/>
                   <TweetQuote quoteText={extractQuote(this.state.quotes.data.quotes[this.state.currentQuoteIndex])} quoteAuthor={extractAuthor(this.state.quotes.data.quotes[this.state.currentQuoteIndex])} />
-		            <ReactFCCtest />
+                {/*<ReactFCCtest />*/}
                 </div>
             );
         }
